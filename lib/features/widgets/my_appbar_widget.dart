@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:kheloo/features/setup/login_screen.dart';
+import 'package:kheloo/features/utils/colors.dart';
 import 'package:kheloo/features/utils/styles.dart';
 
 class MyAppbarWidget extends StatelessWidget {
@@ -21,14 +23,17 @@ class MyAppbarWidget extends StatelessWidget {
           ),
         ),
       ),
-      Container(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
-        height: 60,
-        alignment: Alignment.center,
-        color: Colors.orange[300],
-        child: Text(
-          'LOGIN',
-          style: tsS16W500CFFF,
+      InkWell(
+        onTap: (() => Navigator.pushNamed(context, LoginScreen.route)),
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          height: 60,
+          alignment: Alignment.center,
+          color: colorPrimary,
+          child: Text(
+            'LOGIN',
+            style: tsS16W500CFFF,
+          ),
         ),
       )
     ]);

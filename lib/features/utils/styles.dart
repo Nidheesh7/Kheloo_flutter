@@ -30,9 +30,20 @@ TextStyle get tsS18W500 => const TextStyle(
       color: Colors.white,
     );
 
-
 TextStyle get tsS16W500CFFF => const TextStyle(
       fontSize: 16,
+      fontWeight: FontWeight.w500,
+      color: Colors.white,
+    );
+
+TextStyle get tsS28W700CFFF => const TextStyle(
+      fontSize: 28,
+      fontWeight: FontWeight.w700,
+      color: Colors.white,
+    );
+
+TextStyle get tsS15W300CFFF => const TextStyle(
+      fontSize: 15,
       fontWeight: FontWeight.w500,
       color: Colors.white,
     );

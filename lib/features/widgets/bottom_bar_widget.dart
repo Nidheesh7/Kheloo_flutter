@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:kheloo/features/utils/colors.dart';
 import 'package:kheloo/features/utils/extensions.dart';
 
 class BottomBarWidget extends StatelessWidget {
@@ -12,7 +13,7 @@ class BottomBarWidget extends StatelessWidget {
     return BottomAppBar(
       clipBehavior: Clip.antiAlias,
       child: Container(
-        color: Colors.orange[300],
+        color: colorPrimary,
         height: 76.0,
         child: Row(
           children: [

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kheloo/features/utils/colors.dart';
 import 'package:kheloo/features/utils/extensions.dart';
 import 'package:kheloo/features/utils/styles.dart';
 import 'package:kheloo/features/widgets/bottom_bar_widget.dart';
@@ -80,7 +81,7 @@ class _GamesWidget extends StatelessWidget {
               Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: Colors.orange[300],
+                  color: colorPrimary,
                 ),
                 height: 40,
                 width: 7,
@@ -96,7 +97,7 @@ class _GamesWidget extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(vertical: 13, horizontal: 20),
                 decoration: BoxDecoration(
-                    color: Colors.orange[300],
+                    color: colorPrimary,
                     borderRadius: BorderRadius.circular(5)),
                 child: Text(
                   'Hide',

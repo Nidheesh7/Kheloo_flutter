@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kheloo/features/app_config.dart';
 import 'package:kheloo/features/routes.dart';
-import 'package:kheloo/features/splash_screen.dart';
+import 'package:kheloo/features/setup/login_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,9 +16,14 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        textTheme: const TextTheme(
+          subtitle1: TextStyle(color: Colors.white),
+        ),
       ),
+
       themeMode: ThemeMode.light,
-      initialRoute: SplashSceen.route,
+      // initialRoute: SplashSceen.route,
+      initialRoute: LoginScreen.route,
       routes: appRoutes(),
       key: AppConfig.navigatorKey,
       debugShowCheckedModeBanner: false,
