@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:kheloo/features/setup/forgot_password_screen.dart';
+import 'package:kheloo/features/setup/signup_screen.dart';
 import 'package:kheloo/features/utils/colors.dart';
 import 'package:kheloo/features/utils/styles.dart';
 import 'package:kheloo/features/widgets/textform_widget.dart';
@@ -61,9 +63,13 @@ class _LoginScreenState extends State<LoginScreen> {
                     },
                   ),
                   const SizedBox(height: 20),
-                  Text(
-                    'Forgot Password',
-                    style: tsS15W300CFFF,
+                  InkWell(
+                    onTap: (() => Navigator.pushNamed(
+                        context, ForgotPasswordScreen.route)),
+                    child: Text(
+                      'Forgot Password',
+                      style: tsS15W300CFFF,
+                    ),
                   ),
                   const SizedBox(height: 30),
                   SizedBox(
@@ -85,7 +91,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   SizedBox(
                     height: 60,
                     child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamed(context, SignUpScreen.route);
+                        },
                         style: ElevatedButton.styleFrom(
                             elevation: 2,
                             backgroundColor: Colors.black,

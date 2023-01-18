@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:kheloo/features/home/home_screen.dart';
 import 'package:kheloo/features/setup/forgot_password_screen.dart';
 import 'package:kheloo/features/setup/login_screen.dart';
+import 'package:kheloo/features/setup/signup_form_screen.dart';
+import 'package:kheloo/features/setup/signup_screen.dart';
 import 'package:kheloo/features/splash_screen.dart';
 
 Map<String, Widget Function(BuildContext context)> appRoutes() => {
@@ -9,6 +11,8 @@ Map<String, Widget Function(BuildContext context)> appRoutes() => {
       SplashSceen.route: (_) => const SplashSceen(),
       LoginScreen.route: (_) => const LoginScreen(),
       ForgotPasswordScreen.route: (_) => const ForgotPasswordScreen(),
+      SignUpScreen.route: (_) => const SignUpScreen(),
+      SignUpFormScreen.route: (_) => const SignUpFormScreen(),
     };
 
 RouteFactory onAppGenerateRoute() => (settings) {
