@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kheloo/features/home/home_screen.dart';
 import 'package:kheloo/features/setup/forgot_password_screen.dart';
 import 'package:kheloo/features/setup/signup_screen.dart';
 import 'package:kheloo/features/utils/colors.dart';
@@ -77,7 +78,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: ElevatedButton(
                         onPressed: () {
                           if (_keyForm.currentState?.validate() ?? false) {
-                            debugPrint('success');
+                            Navigator.pushNamed(context, HomeScreen.route);
                           }
                         },
                         style: ElevatedButton.styleFrom(

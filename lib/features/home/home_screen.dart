@@ -7,7 +7,6 @@ import 'package:kheloo/features/widgets/lang_dialog.dart';
 import 'package:kheloo/features/widgets/my_appbar_widget.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-
 class HomeScreen extends StatelessWidget {
   static const String route = 'home_screen';
   const HomeScreen({Key? key}) : super(key: key);
@@ -53,7 +52,11 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               _LangWidget(),
-              const SizedBox(height: 10),
+              const SizedBox(height: 30),
+              Image.asset('assets/images/jackpot.png'),
+              const SizedBox(height: 20),
+              _LiveWithDrawel(),
+              const SizedBox(height: 20),
               _GamesWidget()
             ],
           ),
@@ -182,6 +185,129 @@ class _LangWidget extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+class _LiveWithDrawel extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: <Widget>[
+        Image.asset(
+          'games.png'.asAssetImg(),
+          height: 60,
+        ),
+        Stack(
+          alignment: Alignment.center,
+          children: <Widget>[
+            // add image
+            Image.asset(
+              'assets/images/violet_bg.png',
+              height: 200,
+            ),
+            Column(
+              // mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: <Widget>[
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: const <Widget>[
+                    _WithdrawName('Nidhi', 100, 1),
+                    _WithdrawName('Nidhi', 100, 1),
+                  ],
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: const <Widget>[
+                    _WithdrawName('Nidhi', 100, 1),
+                    _WithdrawName('Nidhi', 100, 1),
+                  ],
+                )
+              ],
+            ),
+            // add 4 text
+          ],
+        ),
+      ],
+    );
+  }
+}
+
+class _WithdrawName extends StatelessWidget {
+  final String name;
+  final double amount;
+  final int timeAgo;
+
+  const _WithdrawName(
+    this.name,
+    this.amount,
+    this.timeAgo,
+  );
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Container(
+          height: 40,
+          width: 40,
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              border: Border.all(width: 3, color: const Color(0xFFd57f23))),
+          child: const Icon(
+            Icons.person,
+            color: Colors.white,
+            size: 30,
+          ),
+        ),
+        const SizedBox(
+          width: 10,
+        ),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Row(
+              children: <Widget>[
+                Text(
+                  '$name ',
+                  style: const TextStyle(
+                    color: Color(0xFFffffff),
+                    // fontSize: 10,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const Text(
+                  '₹ ',
+                  style: TextStyle(
+                    color: Color(0xFFf4ad09),
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Text(
+                  // amount without decimal
+                  amount.toStringAsFixed(0),
+                  style: const TextStyle(
+                    color: Color(0xFFffffff),
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
+            Text(
+              '$timeAgo second ago',
+              style: const TextStyle(
+                fontSize: 10,
+                color: Color(0xFFffffff),
+              ),
+            ),
+          ],
+        ),
+      ],
     );
   }
 }
